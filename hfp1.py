@@ -1,0 +1,36 @@
+#hfp1
+#idle usage Pro-Tips
+#Alt-P - recalls the last code statement
+#Alt-N - quickly moves to the next code statement
+
+#using a for loop to iterate over each item in a list, better than using a while loop
+for i in listX
+    print(i)
+
+#Identifiers can only start with a letter or _
+
+if condtion:
+    #the true contition holds
+else:
+    #the false case occurs
+
+for each_item in movies1:
+    if isinstance(each_item, list):
+        for eb in each_item:
+            print(eb)
+    else:
+        print(each_item)
+
+#help(BIF), displays a description of the provided built in function
+
+#function template
+def funcName(arg0,arg1):
+    #code to execute on provided parameters
+
+#recursive function to process each item in a list
+def listProc(listA):
+    for each_item in listA:
+        if isinstance(each_item, list):
+            listProc(each_item)
+        else:
+            print(each_item)
