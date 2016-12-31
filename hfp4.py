@@ -46,7 +46,8 @@ for writing. If the file already exists, it is cleared of its contents, or clobb
  
  #Final code, Opened an external file, read the data, sorted the contents, wrote the output to a set of external files. 
  #uses try/except/finally pattern
-import os
+import sys
+import pickle
  
 man = []
 other = []
@@ -78,17 +79,24 @@ except IOError:
     print('The datafile is missing!')
     
 try:
-    man_file=open('man_data.txt','w')
-    other_file=open('other_data.txt','w')
-    
-    listProc(man)
-    listProc(other)
+    with open('man_data.txt','wb') as man_file, open('other_data.txt','wb') as other_file:
+        #listProc(man, outFH=man_file)
+        #listProc(other, outFH=other_file)
+        pickle.dump(man,man_file)
+        pickle.dump(other,other_file)
+        
     
     #print(man,file=man_file)
     #print(other,file=other_file)
+ 
+except IOError as err:
+    print('File error:' + str(err))
+
+except pickle.PickleError as perr:
+    print('PickleError:'+ str(perr))
     
-except IOError:
-    print('File error')
+    
+    
 finally:
     man_file.close()
     other_file.close()
