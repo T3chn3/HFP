@@ -1,7 +1,24 @@
+
+c_james=[]
+c_julie=[]
+c_mikey=[]
+c_sarah=[]
+
+#Sanitize() 
+def sanitize(time_string):
+    if '-' in time_string:
+        splitter = '-'     
+    elif ':' in time_string:
+        splitter = ':'
+    else:
+        return time_string
+    (mins, secs) = time_string.split(splitter)
+    return(mins + '.' + secs)
+
+
 with open('james.txt') as jaf:
     data=jaf.readline()
-james=data.strip().split(',') #example of method chaining, methods are applied from left to right
-
+james=data.strip().split(',') #example of method chaining, methods are applied from left to right 
 with open('julie.txt') as juf:
     data=juf.readline()
 julie=data.strip().split(',')
@@ -15,15 +32,43 @@ with open('sarah.txt') as saf:
 sarah=data.strip().split(',')
 
 
-print(sorted(james))
+for each_i in james:
+    c_james.append(sanitize(each_i))
+    
+for each_i in sarah:
+    c_sarah.append(sanitize(each_i))
+
+for each_i in julie:
+    c_julie.append(sanitize(each_i))
+
+for each_i in mikey:
+    c_mikey.append(sanitize(each_i))    
+
+print('James')
+print(sorted(james)) #add the reverse=True flag to sort in decending order
+print(sorted(c_james))
+
+print("Julie")
 print(sorted(julie))
+print(sorted(c_julie))
+
+print("Mikey")
 print(sorted(mikey))
+print(sorted(c_mikey))
+
+print("Sarah")
 print(sorted(sarah))
+print(sorted(c_sarah))
+
+
 
 
 ''' 
 -In-place sorting, used by the sort(), sorts the data then and replaces original order with the new order
 -Copied sorting, used by sorted(), sorts the data then returns a sorted copy of the data, origial order is maintained
+-method chaining is read from left to right
+-fuction chaining is read from right to left
 
-
+-This is a good example of input->sanitize->process->output pattern
+-Lots of duplication going on there. Next section covers List Comprehension to reduce code duplication
 '''
