@@ -14,7 +14,16 @@ with open('sarah.txt') as saf:
     data=saf.readline()
 sarah=data.strip().split(',')
 
-print(james)
-print(julie)
-print(mikey)
-print(sarah)
+
+print(sorted(james))
+print(sorted(julie))
+print(sorted(mikey))
+print(sorted(sarah))
+
+
+''' 
+-In-place sorting, used by the sort(), sorts the data then and replaces original order with the new order
+-Copied sorting, used by sorted(), sorts the data then returns a sorted copy of the data, origial order is maintained
+
+
+'''
