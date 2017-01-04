@@ -90,3 +90,27 @@ print(secs) -> [60,120,180]
 
 print(sorted([sanitize(t) for t in julie]))
 
+#remove duplates in a list, and return the top 3 values
+
+''' 
+sequence = ['1', '2', '3', '3', '6', '4', '5', '6']
+unique = []
+[unique.append(item) for item in sequence if item not in unique]
+'''
+
+mikey = sorted([sanitize(t)for t in mikey])
+unique = []
+[unique.append(i) for i in mikey if i not in unique]
+print('mikey\'s top values' + str(unique[0:3]))
+
+sarah = sorted([sanitize(t)for t in sarah])
+unique = []
+[unique.append(i) for i in sarah if i not in unique]
+print('sarah\'s top values' + str(unique[0:3]))
+
+julie = sorted([sanitize(t)for t in julie])
+unique = []
+[unique.append(i) for i in julie if i not in unique]
+print('julie\'s top values' + str(unique[0:3]))
+
+#using sets can be a much easier way to remove dupes
