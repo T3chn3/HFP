@@ -19,6 +19,8 @@ def sanitize(time_string):
 with open('james.txt') as jaf:
     data=jaf.readline()
 james=data.strip().split(',') #example of method chaining, methods are applied from left to right 
+
+
 with open('julie.txt') as juf:
     data=juf.readline()
 julie=data.strip().split(',')
@@ -62,7 +64,6 @@ print(sorted(c_sarah))
 
 
 
-
 ''' 
 -In-place sorting, used by the sort(), sorts the data then and replaces original order with the new order
 -Copied sorting, used by sorted(), sorts the data then returns a sorted copy of the data, origial order is maintained
@@ -72,3 +73,20 @@ print(sorted(c_sarah))
 -This is a good example of input->sanitize->process->output pattern
 -Lots of duplication going on there. Next section covers List Comprehension to reduce code duplication
 '''
+
+#list comprehension
+#the above function in a single line
+#new list  transformation   to each item  in an existing list
+c_mikey = [sanitize(each_t) for each_t in mikey] #the append() is implied
+
+#other examples
+'''
+min =[1,2,3]
+secs=[m * 60 for m in min]
+
+print(secs) -> [60,120,180] 
+
+'''
+
+print(sorted([sanitize(t) for t in julie]))
+
