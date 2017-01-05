@@ -114,3 +114,28 @@ unique = []
 print('julie\'s top values' + str(unique[0:3]))
 
 #using sets can be a much easier way to remove dupes
+
+distances = set() #factory function 
+distances = {10.6,10,11,10.6,"two",7,7.1,8.1,8.1}
+'''
+A function factory is a function used to make new data items of a particular type.
+set(), creates a new set with the supplied parameteres.
+'''
+
+distances = set(james) #since distances is defined as a set, all dupes in james will be ignored and not placed in distances
+
+#All this code can be reduced to using the sorted(set())[0:3]
+
+#post code review suggestions
+
+def get_coach_data(filename):
+    try:
+        open(filename) as f:
+            data=f.readline()
+        return(data.strip().split(','))
+    except IOError as ioerr
+        print('File Error' + str(ioerr))
+        return(None)
+#calling the function 
+sarah = get_coach_data('sarah.txt')
+
