@@ -34,4 +34,3 @@ print(james['Name']+ "'s fastest times are :" + james['Times'])
 print(julie['Name']+ "'s fastest times are :" + julie['Times'])
 print(sarah['Name']+ "'s fastest times are :" + sarah['Times'])
 print(mikey['Name']+ "'s fastest times are :" + mikey['Times'])
-
