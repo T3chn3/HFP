@@ -1,4 +1,4 @@
-
+#template for python based web server
 from http.server import HTTPServer, CGIHTTPRequestHandler
 
 port = 8080

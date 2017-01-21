@@ -78,7 +78,7 @@ try:
 except IOError:
     print('The datafile is missing!')
     
-try:
+try: #changed this to use pickle to send output ot man_data.txt as binary, use of dump packs the output
     with open('man_data.txt','wb') as man_file, open('other_data.txt','wb') as other_file:
         #listProc(man, outFH=man_file)
         #listProc(other, outFH=other_file)
@@ -100,9 +100,34 @@ except pickle.PickleError as perr:
 finally:
     man_file.close()
     other_file.close()
-   
 
 
+
+
+#reading in a pickled file, then executing listProc on the unpacked data
+try:
+	with open('man_data.txt', 'rb') as man_file:
+		new_man = pickle.load(man_file)
+except IOError as err:
+	print('File error: ' + str(err))
+except pickle.PickleError as perr:
+	print('Pickling error: ' +str(perr))
+
+	
+listProc(new_man)    
+
+'''
+Key takeaways from chaper 4
+strip(), bif that removes unwated whitespace from strings
+
+print(), the file parameter controls  where data is sent/saved
+
+finally allows you to execute code once you exit the try/except block
+
+use the 'as' keyword to reference the exception object
+
+str() can be used to cast an object to a string
+'''
 
 
 

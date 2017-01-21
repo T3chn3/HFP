@@ -35,3 +35,6 @@ def get_from_store():
         print('File error (get_from_store):' + str(ioerr))
  
     return(all_athletes)
+    
+    
+#usage was covered via IDLE, see page 225
