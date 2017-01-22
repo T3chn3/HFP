@@ -31,7 +31,7 @@ names = ['John',['Johnny','Jack'], 'Michael', ['Mike','Mikey','Mick']] #list
 print(type(names))
 print(names)
 a = json.dumps(names)
-print(type(a))
+print(type(a)) # a is a json string, this should be sent over the wire or to another pgrm
 print(a)
 b = json.loads(a)
 print(type(b))
